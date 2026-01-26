@@ -1,0 +1,222 @@
+---
+description: Execute an implementation plan
+argument-hint: [path-to-plan]
+---
+
+# Execute: Implement from Plan
+
+## Plan to Execute
+
+Read plan file: `$ARGUMENTS`
+
+## Execution Instructions
+
+### 0. Plan Verification (REQUIRED)
+
+**Before executing ANY implementation, verify a plan exists:**
+
+1. Check that `$ARGUMENTS` points to a valid plan file in `.agents/plans/`
+2. If no plan file exists or path is invalid:
+   - **STOP execution immediately**
+   - Inform the user: "No valid plan found. Run `@plan-feature <feature-name>` first."
+   - Do NOT proceed with ad-hoc implementation
+
+**Why This Matters:**
+- Plans prevent reactive problem-solving by surfacing issues during research
+- The @plan-feature command's dependency analysis catches package/version issues upfront
+- Platform-specific considerations are documented before implementation begins
+- Demo vs production scope is pre-defined, preventing ad-hoc feature cuts
+
+**Exceptions:**
+- Bug fixes with clear scope (single file, obvious fix)
+- Documentation-only changes
+- Configuration updates
+
+For anything else, **plan first, execute second**.
+
+---
+
+### 1. Read and Understand
+
+- Read the ENTIRE plan carefully
+- Understand all tasks and their dependencies
+- Note the validation commands to run
+- Review the testing strategy
+
+### 2. Execute Tasks in Order
+
+For EACH task in "Step by Step Tasks":
+
+#### a. Navigate to the task
+- Identify the file and action required
+- Read existing related files if modifying
+
+#### b. Implement the task
+- Follow the detailed specifications exactly
+- Maintain consistency with existing code patterns
+- Include proper type hints and documentation
+- Add structured logging where appropriate
+
+#### c. Verify as you go
+- After each file change, check syntax
+- Ensure imports are correct
+- Verify types are properly defined
+
+### 3. Implement Testing Strategy
+
+After completing implementation tasks:
+
+- Create all test files specified in the plan
+- Implement all test cases mentioned
+- Follow the testing approach outlined
+- Ensure tests cover edge cases
+
+### 4. Run Validation Commands
+
+Execute ALL validation commands from the plan in order:
+
+```bash
+# Run each command exactly as specified in plan
+```
+
+If any command fails:
+- Fix the issue
+- Re-run the command
+- Continue only when it passes
+
+### 5. Final Verification
+
+Before completing:
+
+- ✅ All tasks from plan completed
+- ✅ All tests created and passing
+- ✅ All validation commands pass
+- ✅ Code follows project conventions
+- ✅ Documentation added/updated as needed
+- ✅ State persistence tested (for conversation/interactive features):
+  - Verify data saves on user action
+  - Verify data restores on component mount
+  - Verify state clears appropriately (topic change, logout, etc.)
+
+### 5a. Mobile-Specific Validation (for React Native apps)
+
+If implementing mobile features, also verify:
+
+- ✅ App launches on iOS Simulator without Metro bundler errors
+- ✅ All native permissions prompt correctly (microphone, speech recognition)
+- ✅ Offline mode works when API is unreachable (fallback to mock/cached data)
+- ✅ Push notifications schedule correctly for spaced repetition
+- ✅ AsyncStorage data persists across app restarts
+- ✅ Date objects properly parsed after JSON.parse from storage
+- ✅ Voice recording callbacks don't capture stale closure state
+
+Reference: `.kiro/steering/mobile.md` for mobile-specific patterns and troubleshooting
+
+### 6. Divergence Check (REQUIRED)
+
+**Before completing, assess plan adherence:**
+
+Calculate adherence: `(files created + files modified as planned) / total planned files`
+
+**If adherence < 70%:**
+1. STOP and document why divergence was necessary
+2. Consider if a re-plan is needed with new constraints
+3. Get explicit approval before proceeding with different architecture
+
+**Architecture changes require documentation:**
+- Switching from backend to frontend-only
+- Removing planned integrations (Letta, external APIs)
+- Changing data persistence strategy
+
+---
+
+### 7. Create Execution Report (REQUIRED)
+
+**This is NOT optional.** Every execution MUST create an execution report.
+
+Save to: `.agents/execution-reports/{feature-name}.md`
+
+```markdown
+# Execution Report: {Feature Name}
+
+**Date**: {current date}
+**Plan file**: {path to plan}
+**Status**: Complete | Partial | Blocked
+
+## Plan Adherence
+
+| Metric | Planned | Actual |
+|--------|---------|--------|
+| Files to create | X | Y |
+| Files to modify | X | Y |
+| Tests to write | X | Y |
+| Adherence | - | Z% |
+
+## Files Created
+- `path/to/file.ts` - Description
+
+## Files Modified  
+- `path/to/file.ts` - What changed
+
+## Divergences
+
+### Divergence 1: {title}
+- **Planned**: What the plan specified
+- **Actual**: What was implemented
+- **Reason**: Why the change was necessary
+- **Impact**: Effect on feature/architecture
+
+## Validation Results
+{output from validation commands}
+
+## Skipped Items
+- {item} - Reason for skipping
+
+## Recommendations
+- Follow-up work needed
+- Technical debt created
+```
+
+**Why This Matters:**
+- Captures institutional knowledge about implementation decisions
+- Enables system reviews to identify process improvements
+- Creates audit trail for architectural changes
+
+---
+
+## Output Summary
+
+After creating the execution report, provide:
+
+### Completed Tasks
+- List of all tasks completed
+- Files created (with paths)
+- Files modified (with paths)
+
+### Tests Added
+- Test files created
+- Test cases implemented
+- Test results
+
+### Validation Results
+```bash
+# Output from each validation command
+```
+
+### Execution Report
+- Path to created execution report
+- Adherence percentage
+- Key divergences (if any)
+
+### Ready for Commit
+- Confirm all changes are complete
+- Confirm all validations pass
+- Confirm execution report created
+- Ready for `/commit` command
+
+## Notes
+
+- If you encounter issues not addressed in the plan, document them in execution report
+- If you need to deviate from the plan, explain why in execution report
+- If tests fail, fix implementation until they pass
+- Don't skip validation steps or execution report
