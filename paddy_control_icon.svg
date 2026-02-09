@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="220" fill="#0b0d0c" />
+  
+  <!-- Hearth Glow -->
+  <defs>
+    <radialGradient id="hearthGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2e7d32; stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#0b0d0c; stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B5E20; stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <circle cx="512" cy="512" r="400" fill="url(#hearthGlow)" />
+
+  <!-- Stylized Celtic Shield / Hearth -->
+  <path fill="url(#metal)" d="M512 120 C200 120 120 300 120 512 C120 724 200 904 512 904 C824 904 904 724 904 512 C904 300 824 120 512 120 Z M512 840 C280 840 200 700 200 512 C200 324 280 184 512 184 C744 184 824 324 824 512 C824 700 744 840 512 840 Z" opacity="0.8"/>
+  
+  <!-- Central Trinity Knot (Triquetra) representing the Hearth Flame -->
+  <path fill="#FF9800" d="M512 300 C580 400 720 450 720 550 C720 650 620 750 512 750 C404 750 304 650 304 550 C304 450 444 400 512 300 Z" opacity="0.9">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+  </path>
+  
+  <path fill="#2e7d32" d="M512 380 C540 440 600 460 600 510 C600 560 560 600 512 600 C464 600 424 560 424 510 C424 460 484 440 512 380 Z" />
+</svg>
