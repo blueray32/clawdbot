@@ -1,5 +1,5 @@
-import OpenClawKit
-import OpenClawProtocol
+import PaddyKit
+import PaddyProtocol
 
-typealias ProtoAnyCodable = OpenClawProtocol.AnyCodable
-typealias KitAnyCodable = OpenClawKit.AnyCodable
+typealias ProtoAnyCodable = PaddyProtocol.AnyCodable
+typealias KitAnyCodable = PaddyKit.AnyCodable

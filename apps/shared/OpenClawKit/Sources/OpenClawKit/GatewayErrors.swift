@@ -1,4 +1,4 @@
-import OpenClawProtocol
+import PaddyProtocol
 import Foundation
 
 /// Structured error surfaced when the gateway responds with `{ ok: false }`.

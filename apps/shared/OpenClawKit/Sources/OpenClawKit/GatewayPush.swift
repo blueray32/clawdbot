@@ -1,4 +1,4 @@
-import OpenClawProtocol
+import PaddyProtocol
 
 /// Server-push messages from the gateway websocket.
 ///

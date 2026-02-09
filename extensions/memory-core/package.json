@@ -1,7 +1,7 @@
 {
-  "name": "@openclaw/memory-core",
+  "name": "@paddy/memory-core",
   "version": "2026.2.6-3",
-  "description": "OpenClaw core memory search plugin",
+  "description": "Paddy core memory search plugin",
   "type": "module",
   "devDependencies": {
     "openclaw": "workspace:*"

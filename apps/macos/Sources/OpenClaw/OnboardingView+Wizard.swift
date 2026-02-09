@@ -1,4 +1,4 @@
-import OpenClawProtocol
+import PaddyProtocol
 import Observation
 import SwiftUI
 

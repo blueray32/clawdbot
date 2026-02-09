@@ -1,7 +1,7 @@
 {
-  "name": "@openclaw/slack",
+  "name": "@paddy/slack",
   "version": "2026.2.6-3",
-  "description": "OpenClaw Slack channel plugin",
+  "description": "Paddy Slack channel plugin",
   "type": "module",
   "devDependencies": {
     "openclaw": "workspace:*"

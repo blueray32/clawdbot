@@ -7,7 +7,7 @@ import { parseSchtasksQuery, readScheduledTaskCommand, resolveTaskScriptPath } f
 describe("schtasks runtime parsing", () => {
   it("parses status and last run info", () => {
     const output = [
-      "TaskName: \\OpenClaw Gateway",
+      "TaskName: \\OpenClaw's Hearth",
       "Status: Ready",
       "Last Run Time: 1/8/2026 1:23:45 AM",
       "Last Run Result: 0x0",
@@ -21,7 +21,7 @@ describe("schtasks runtime parsing", () => {
 
   it("parses running status", () => {
     const output = [
-      "TaskName: \\OpenClaw Gateway",
+      "TaskName: \\OpenClaw's Hearth",
       "Status: Running",
       "Last Run Time: 1/8/2026 1:23:45 AM",
       "Last Run Result: 0x0",
@@ -222,7 +222,7 @@ describe("readScheduledTaskCommand", () => {
         scriptPath,
         [
           "@echo off",
-          "rem OpenClaw Gateway",
+          "rem OpenClaw's Hearth",
           "cd /d C:\\Projects\\openclaw",
           "set NODE_ENV=production",
           "set OPENCLAW_PORT=18789",

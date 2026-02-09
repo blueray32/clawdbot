@@ -1,6 +1,6 @@
-name: OpenClaw
+name: Paddy
 options:
-  bundleIdPrefix: ai.openclaw
+  bundleIdPrefix: ai.paddy
   deploymentTarget:
     iOS: "18.0"
   xcodeVersion: "16.0"
@@ -16,17 +16,17 @@ packages:
     path: ../../Swabble
 
 schemes:
-  OpenClaw:
+  Paddy:
     shared: true
     build:
       targets:
-        OpenClaw: all
+        Paddy: all
     test:
       targets:
-        - OpenClawTests
+        - PaddyTests
 
 targets:
-  OpenClaw:
+  Paddy:
     type: application
     platform: iOS
     sources:
@@ -71,15 +71,15 @@ targets:
         CODE_SIGN_IDENTITY: "Apple Development"
         CODE_SIGN_STYLE: Manual
         DEVELOPMENT_TEAM: Y5PE65HELJ
-        PRODUCT_BUNDLE_IDENTIFIER: ai.openclaw.ios
-        PROVISIONING_PROFILE_SPECIFIER: "ai.openclaw.ios Development"
+        PRODUCT_BUNDLE_IDENTIFIER: ai.paddy.ios
+        PROVISIONING_PROFILE_SPECIFIER: "ai.paddy.ios Development"
         SWIFT_VERSION: "6.0"
         SWIFT_STRICT_CONCURRENCY: complete
         ENABLE_APPINTENTS_METADATA: NO
     info:
       path: Sources/Info.plist
       properties:
-        CFBundleDisplayName: OpenClaw
+        CFBundleDisplayName: Paddy
         CFBundleIconName: AppIcon
         CFBundleShortVersionString: "2026.2.6"
         CFBundleVersion: "20260202"
@@ -88,16 +88,16 @@ targets:
           UIApplicationSupportsMultipleScenes: false
         UIBackgroundModes:
           - audio
-        NSLocalNetworkUsageDescription: OpenClaw discovers and connects to your OpenClaw gateway on the local network.
+        NSLocalNetworkUsageDescription: Paddy discovers and connects to your Paddy gateway on the local network.
         NSAppTransportSecurity:
           NSAllowsArbitraryLoadsInWebContent: true
         NSBonjourServices:
-          - _openclaw-gw._tcp
-        NSCameraUsageDescription: OpenClaw can capture photos or short video clips when requested via the gateway.
-        NSLocationWhenInUseUsageDescription: OpenClaw uses your location when you allow location sharing.
-        NSLocationAlwaysAndWhenInUseUsageDescription: OpenClaw can share your location in the background when you enable Always.
-        NSMicrophoneUsageDescription: OpenClaw needs microphone access for voice wake.
-        NSSpeechRecognitionUsageDescription: OpenClaw uses on-device speech recognition for voice wake.
+          - _paddy-gw._tcp
+        NSCameraUsageDescription: Paddy can capture photos or short video clips when requested via the gateway.
+        NSLocationWhenInUseUsageDescription: Paddy uses your location when you allow location sharing.
+        NSLocationAlwaysAndWhenInUseUsageDescription: Paddy can share your location in the background when you enable Always.
+        NSMicrophoneUsageDescription: Paddy needs microphone access for voice wake.
+        NSSpeechRecognitionUsageDescription: Paddy uses on-device speech recognition for voice wake.
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
           - UIInterfaceOrientationPortraitUpsideDown
@@ -109,26 +109,26 @@ targets:
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
 
-  OpenClawTests:
+  PaddyTests:
     type: bundle.unit-test
     platform: iOS
     sources:
       - path: Tests
     dependencies:
-      - target: OpenClaw
+      - target: Paddy
       - package: Swabble
         product: SwabbleKit
       - sdk: AppIntents.framework
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: ai.openclaw.ios.tests
+        PRODUCT_BUNDLE_IDENTIFIER: ai.paddy.ios.tests
         SWIFT_VERSION: "6.0"
         SWIFT_STRICT_CONCURRENCY: complete
-        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/OpenClaw.app/OpenClaw"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Paddy.app/Paddy"
         BUNDLE_LOADER: "$(TEST_HOST)"
     info:
       path: Tests/Info.plist
       properties:
-        CFBundleDisplayName: OpenClawTests
+        CFBundleDisplayName: PaddyTests
         CFBundleShortVersionString: "2026.2.6"
         CFBundleVersion: "20260202"

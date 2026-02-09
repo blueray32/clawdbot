@@ -29,10 +29,10 @@ enum DeviceIdentityPaths {
         }
 
         if let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
-            return appSupport.appendingPathComponent("OpenClaw", isDirectory: true)
+            return appSupport.appendingPathComponent("Paddy", isDirectory: true)
         }
 
-        return FileManager.default.temporaryDirectory.appendingPathComponent("openclaw", isDirectory: true)
+        return FileManager.default.temporaryDirectory.appendingPathComponent("paddy", isDirectory: true)
     }
 }
 

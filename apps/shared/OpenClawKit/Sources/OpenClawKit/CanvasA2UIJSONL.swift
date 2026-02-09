@@ -1,6 +1,6 @@
 import Foundation
 
-public enum OpenClawCanvasA2UIJSONL: Sendable {
+public enum PaddyCanvasA2UIJSONL: Sendable {
     public struct ParsedItem: Sendable {
         public var lineNumber: Int
         public var message: AnyCodable

@@ -31,6 +31,7 @@ export default defineConfig(() => {
       outDir: path.resolve(here, "../dist/control-ui"),
       emptyOutDir: true,
       sourcemap: true,
+      target: ["es2020", "safari15"],
     },
     server: {
       host: true,

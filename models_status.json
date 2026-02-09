@@ -1,0 +1,237 @@
+{
+  "configPath": "/Users/ciarancox/.openclaw/openclaw.json",
+  "agentDir": "/Users/ciarancox/.openclaw/agents/main/agent",
+  "defaultModel": "google-antigravity/gemini-2.0-flash-thinking-exp-01-21",
+  "resolvedDefault": "google-antigravity/gemini-2.0-flash-thinking-exp-01-21",
+  "fallbacks": [
+    "google-antigravity/gemini-3-pro-high",
+    "google-antigravity/gemini-3-pro-low",
+    "openai-codex/gpt-5.2"
+  ],
+  "imageModel": null,
+  "imageFallbacks": [],
+  "aliases": {
+    "gemini-high": "google-antigravity/gemini-3-pro-high",
+    "gemini-low": "google-antigravity/gemini-3-pro-low",
+    "thinking": "google-antigravity/gemini-2.0-flash-thinking-exp-01-21",
+    "codex": "openai-codex/gpt-5.2",
+    "codex-mini": "openai-codex/gpt-5.1-codex-mini"
+  },
+  "allowed": [
+    "google-antigravity/gemini-3-pro-high",
+    "google-antigravity/gemini-3-pro-low",
+    "google-antigravity/gemini-2.0-flash-thinking-exp-01-21",
+    "openai-codex/gpt-5.2",
+    "openai-codex/gpt-5.1-codex-mini"
+  ],
+  "auth": {
+    "storePath": "/Users/ciarancox/.openclaw/agents/main/agent/auth-profiles.json",
+    "shellEnvFallback": {
+      "enabled": false,
+      "appliedKeys": []
+    },
+    "providersWithOAuth": ["google-antigravity (1)", "openai-codex (1)"],
+    "missingProvidersInUse": [],
+    "providers": [
+      {
+        "provider": "anthropic",
+        "effective": {
+          "kind": "env",
+          "detail": "sk-ant-a...pfEl5AAA"
+        },
+        "profiles": {
+          "count": 0,
+          "oauth": 0,
+          "token": 0,
+          "apiKey": 0,
+          "labels": []
+        },
+        "env": {
+          "value": "sk-ant-a...pfEl5AAA",
+          "source": "env: ANTHROPIC_API_KEY"
+        }
+      },
+      {
+        "provider": "google",
+        "effective": {
+          "kind": "profiles",
+          "detail": "~/.openclaw/agents/main/agent/auth-profiles.json"
+        },
+        "profiles": {
+          "count": 1,
+          "oauth": 0,
+          "token": 0,
+          "apiKey": 1,
+          "labels": ["google:manual=AIzaSyAb...blBzV_AA"]
+        }
+      },
+      {
+        "provider": "google-antigravity",
+        "effective": {
+          "kind": "profiles",
+          "detail": "~/.openclaw/agents/main/agent/auth-profiles.json"
+        },
+        "profiles": {
+          "count": 1,
+          "oauth": 1,
+          "token": 0,
+          "apiKey": 0,
+          "labels": [
+            "google-antigravity:ciarancoxliverpool@gmail.com=OAuth (ciarancoxliverpool@gmail.com)"
+          ]
+        }
+      },
+      {
+        "provider": "ollama",
+        "effective": {
+          "kind": "models.json",
+          "detail": "ollama"
+        },
+        "profiles": {
+          "count": 0,
+          "oauth": 0,
+          "token": 0,
+          "apiKey": 0,
+          "labels": []
+        },
+        "modelsJson": {
+          "value": "ollama",
+          "source": "models.json: ~/.openclaw/agents/main/agent/models.json"
+        }
+      },
+      {
+        "provider": "openai",
+        "effective": {
+          "kind": "env",
+          "detail": "sk-proj-...0pdj0KIA"
+        },
+        "profiles": {
+          "count": 0,
+          "oauth": 0,
+          "token": 0,
+          "apiKey": 0,
+          "labels": []
+        },
+        "env": {
+          "value": "sk-proj-...0pdj0KIA",
+          "source": "env: OPENAI_API_KEY"
+        }
+      },
+      {
+        "provider": "openai-codex",
+        "effective": {
+          "kind": "profiles",
+          "detail": "~/.openclaw/agents/main/agent/auth-profiles.json"
+        },
+        "profiles": {
+          "count": 1,
+          "oauth": 1,
+          "token": 0,
+          "apiKey": 0,
+          "labels": ["openai-codex:default=OAuth"]
+        }
+      }
+    ],
+    "unusableProfiles": [],
+    "oauth": {
+      "warnAfterMs": 86400000,
+      "profiles": [
+        {
+          "profileId": "google:manual",
+          "provider": "google",
+          "type": "api_key",
+          "status": "static",
+          "source": "store",
+          "label": "google:manual"
+        },
+        {
+          "profileId": "google-antigravity:ciarancoxliverpool@gmail.com",
+          "provider": "google-antigravity",
+          "type": "oauth",
+          "status": "ok",
+          "expiresAt": 1770150127471,
+          "remainingMs": 1071386,
+          "source": "store",
+          "label": "google-antigravity:ciarancoxliverpool@gmail.com (ciarancoxliverpool@gmail.com)"
+        },
+        {
+          "profileId": "openai-codex:default",
+          "provider": "openai-codex",
+          "type": "oauth",
+          "status": "ok",
+          "expiresAt": 1770310307989,
+          "remainingMs": 161251904,
+          "source": "store",
+          "label": "openai-codex:default"
+        }
+      ],
+      "providers": [
+        {
+          "provider": "anthropic",
+          "status": "missing",
+          "profiles": []
+        },
+        {
+          "provider": "google",
+          "status": "static",
+          "profiles": [
+            {
+              "profileId": "google:manual",
+              "provider": "google",
+              "type": "api_key",
+              "status": "static",
+              "source": "store",
+              "label": "google:manual"
+            }
+          ]
+        },
+        {
+          "provider": "google-antigravity",
+          "status": "ok",
+          "profiles": [
+            {
+              "profileId": "google-antigravity:ciarancoxliverpool@gmail.com",
+              "provider": "google-antigravity",
+              "type": "oauth",
+              "status": "ok",
+              "expiresAt": 1770150127471,
+              "remainingMs": 1071386,
+              "source": "store",
+              "label": "google-antigravity:ciarancoxliverpool@gmail.com (ciarancoxliverpool@gmail.com)"
+            }
+          ],
+          "expiresAt": 1770150127471,
+          "remainingMs": 1071386
+        },
+        {
+          "provider": "ollama",
+          "status": "missing",
+          "profiles": []
+        },
+        {
+          "provider": "openai",
+          "status": "missing",
+          "profiles": []
+        },
+        {
+          "provider": "openai-codex",
+          "status": "ok",
+          "profiles": [
+            {
+              "profileId": "openai-codex:default",
+              "provider": "openai-codex",
+              "type": "oauth",
+              "status": "ok",
+              "expiresAt": 1770310307989,
+              "remainingMs": 161251904,
+              "source": "store",
+              "label": "openai-codex:default"
+            }
+          ],
+          "expiresAt": 1770310307989,
+          "remainingMs": 161251904
+        }
+      ]
+    }
+  }
+}

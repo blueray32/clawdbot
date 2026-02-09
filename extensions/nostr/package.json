@@ -1,7 +1,7 @@
 {
-  "name": "@openclaw/nostr",
+  "name": "@paddy/nostr",
   "version": "2026.2.6-3",
-  "description": "OpenClaw Nostr channel plugin for NIP-04 encrypted DMs",
+  "description": "Paddy Nostr channel plugin for NIP-04 encrypted DMs",
   "type": "module",
   "dependencies": {
     "nostr-tools": "^2.23.0",
@@ -26,7 +26,7 @@
       "quickstartAllowFrom": true
     },
     "install": {
-      "npmSpec": "@openclaw/nostr",
+      "npmSpec": "@paddy/nostr",
       "localPath": "extensions/nostr",
       "defaultChoice": "npm"
     }

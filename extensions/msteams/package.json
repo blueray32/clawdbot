@@ -1,7 +1,7 @@
 {
-  "name": "@openclaw/msteams",
+  "name": "@paddy/msteams",
   "version": "2026.2.6-3",
-  "description": "OpenClaw Microsoft Teams channel plugin",
+  "description": "Paddy Microsoft Teams channel plugin",
   "type": "module",
   "dependencies": {
     "@microsoft/agents-hosting": "^1.2.3",
@@ -31,7 +31,7 @@
       "order": 60
     },
     "install": {
-      "npmSpec": "@openclaw/msteams",
+      "npmSpec": "@paddy/msteams",
       "localPath": "extensions/msteams",
       "defaultChoice": "npm"
     }

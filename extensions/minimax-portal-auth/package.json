@@ -1,7 +1,7 @@
 {
-  "name": "@openclaw/minimax-portal-auth",
+  "name": "@paddy/minimax-portal-auth",
   "version": "2026.2.6-3",
-  "description": "OpenClaw MiniMax Portal OAuth provider plugin",
+  "description": "Paddy MiniMax Portal OAuth provider plugin",
   "type": "module",
   "devDependencies": {
     "openclaw": "workspace:*"

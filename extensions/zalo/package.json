@@ -1,7 +1,7 @@
 {
-  "name": "@openclaw/zalo",
+  "name": "@paddy/zalo",
   "version": "2026.2.6-3",
-  "description": "OpenClaw Zalo channel plugin",
+  "description": "Paddy Zalo channel plugin",
   "type": "module",
   "dependencies": {
     "openclaw": "workspace:*",
@@ -28,7 +28,7 @@
       "quickstartAllowFrom": true
     },
     "install": {
-      "npmSpec": "@openclaw/zalo",
+      "npmSpec": "@paddy/zalo",
       "localPath": "extensions/zalo",
       "defaultChoice": "npm"
     }

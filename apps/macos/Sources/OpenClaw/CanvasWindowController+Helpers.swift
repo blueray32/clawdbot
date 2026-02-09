@@ -23,7 +23,7 @@ extension CanvasWindowController {
     }
 
     static func storedFrameDefaultsKey(sessionKey: String) -> String {
-        "openclaw.canvas.frame.\(self.sanitizeSessionKey(sessionKey))"
+        "paddy.canvas.frame.\(self.sanitizeSessionKey(sessionKey))"
     }
 
     static func loadRestoredFrame(sessionKey: String) -> NSRect? {

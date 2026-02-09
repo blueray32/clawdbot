@@ -1,7 +1,7 @@
 {
-  "name": "@openclaw/signal",
+  "name": "@paddy/signal",
   "version": "2026.2.6-3",
-  "description": "OpenClaw Signal channel plugin",
+  "description": "Paddy Signal channel plugin",
   "type": "module",
   "devDependencies": {
     "openclaw": "workspace:*"

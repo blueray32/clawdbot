@@ -1,5 +1,5 @@
-import OpenClawKit
-import OpenClawProtocol
+import PaddyKit
+import PaddyProtocol
 import Foundation
 import Observation
 import SwiftUI
@@ -56,7 +56,7 @@ final class WorkActivityStore {
         phase: String,
         name: String?,
         meta: String?,
-        args: [String: OpenClawProtocol.AnyCodable]?)
+        args: [String: PaddyProtocol.AnyCodable]?)
     {
         let toolKind = Self.mapToolKind(name)
         let label = Self.buildLabel(name: name, meta: meta, args: args)
@@ -225,7 +225,7 @@ final class WorkActivityStore {
     private static func buildLabel(
         name: String?,
         meta: String?,
-        args: [String: OpenClawProtocol.AnyCodable]?) -> String
+        args: [String: PaddyProtocol.AnyCodable]?) -> String
     {
         let wrappedArgs = self.wrapToolArgs(args)
         let display = ToolDisplayRegistry.resolve(name: name ?? "tool", args: wrappedArgs, meta: meta)
@@ -236,17 +236,17 @@ final class WorkActivityStore {
         return display.label
     }
 
-    private static func wrapToolArgs(_ args: [String: OpenClawProtocol.AnyCodable]?) -> OpenClawKit.AnyCodable? {
+    private static func wrapToolArgs(_ args: [String: PaddyProtocol.AnyCodable]?) -> PaddyKit.AnyCodable? {
         guard let args else { return nil }
         let converted: [String: Any] = args.mapValues { self.unwrapJSONValue($0.value) }
-        return OpenClawKit.AnyCodable(converted)
+        return PaddyKit.AnyCodable(converted)
     }
 
     private static func unwrapJSONValue(_ value: Any) -> Any {
-        if let dict = value as? [String: OpenClawProtocol.AnyCodable] {
+        if let dict = value as? [String: PaddyProtocol.AnyCodable] {
             return dict.mapValues { self.unwrapJSONValue($0.value) }
         }
-        if let array = value as? [OpenClawProtocol.AnyCodable] {
+        if let array = value as? [PaddyProtocol.AnyCodable] {
             return array.map { self.unwrapJSONValue($0.value) }
         }
         if let dict = value as? [String: Any] {

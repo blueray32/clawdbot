@@ -129,7 +129,7 @@ describe("config identity defaults", () => {
                   identity: {
                     name: "Samantha Sloth",
                     theme: "space lobster",
-                    emoji: "🦞",
+                    emoji: "🍀",
                   },
                   groupChat: { mentionPatterns: ["@openclaw"] },
                 },
@@ -164,7 +164,7 @@ describe("config identity defaults", () => {
           {
             messages: {
               messagePrefix: "[openclaw]",
-              responsePrefix: "🦞",
+              responsePrefix: "🍀",
             },
             channels: {
               whatsapp: { allowFrom: ["+15555550123"], textChunkLimit: 4444 },
@@ -329,7 +329,7 @@ describe("config identity defaults", () => {
                   identity: {
                     name: "OpenClaw",
                     theme: "space lobster",
-                    emoji: "🦞",
+                    emoji: "🍀",
                   },
                 },
               ],

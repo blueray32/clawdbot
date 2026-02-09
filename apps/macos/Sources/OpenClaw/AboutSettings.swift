@@ -10,7 +10,7 @@ struct AboutSettings: View {
         VStack(spacing: 8) {
             let appIcon = NSApplication.shared.applicationIconImage ?? CritterIconRenderer.makeIcon(blink: 0)
             Button {
-                if let url = URL(string: "https://github.com/openclaw/openclaw") {
+                if let url = URL(string: "https://github.com/paddy/paddy") {
                     NSWorkspace.shared.open(url)
                 }
             } label: {
@@ -29,7 +29,7 @@ struct AboutSettings: View {
             }
 
             VStack(spacing: 3) {
-                Text("OpenClaw")
+                Text("Paddy")
                     .font(.title3.bold())
                 Text("Version \(self.versionString)")
                     .foregroundStyle(.secondary)
@@ -38,7 +38,7 @@ struct AboutSettings: View {
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
-                Text("Menu bar companion for notifications, screenshots, and privileged agent actions.")
+                Text("Your personal agentic companion. Built for the Hearth, the Clan, and the Keep.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -49,10 +49,10 @@ struct AboutSettings: View {
                 AboutLinkRow(
                     icon: "chevron.left.slash.chevron.right",
                     title: "GitHub",
-                    url: "https://github.com/openclaw/openclaw")
-                AboutLinkRow(icon: "globe", title: "Website", url: "https://openclaw.ai")
-                AboutLinkRow(icon: "bird", title: "Twitter", url: "https://twitter.com/steipete")
-                AboutLinkRow(icon: "envelope", title: "Email", url: "mailto:peter@steipete.me")
+                    url: "https://github.com/paddy/paddy")
+                AboutLinkRow(icon: "globe", title: "Website", url: "https://paddy.hearth.ai")
+                AboutLinkRow(icon: "bird", title: "Twitter", url: "https://twitter.com/paddy_hearth")
+                AboutLinkRow(icon: "envelope", title: "Email", url: "mailto:paddy@hearth.ai")
             }
             .frame(maxWidth: .infinity)
             .multilineTextAlignment(.center)
@@ -77,7 +77,7 @@ struct AboutSettings: View {
                 }
             }
 
-            Text("© 2025 Peter Steinberger — MIT License.")
+            Text("© 2025 Paddy's Hearth — Built for the Clan.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
                 .padding(.top, 4)
@@ -110,8 +110,8 @@ struct AboutSettings: View {
     private var buildTimestamp: String? {
         guard
             let raw =
-                (Bundle.main.object(forInfoDictionaryKey: "OpenClawBuildTimestamp") as? String) ??
-                (Bundle.main.object(forInfoDictionaryKey: "OpenClawBuildTimestamp") as? String)
+                (Bundle.main.object(forInfoDictionaryKey: "PaddyBuildTimestamp") as? String) ??
+                (Bundle.main.object(forInfoDictionaryKey: "PaddyBuildTimestamp") as? String)
         else { return nil }
         let parser = ISO8601DateFormatter()
         parser.formatOptions = [.withInternetDateTime]
@@ -125,8 +125,8 @@ struct AboutSettings: View {
     }
 
     private var gitCommit: String {
-        (Bundle.main.object(forInfoDictionaryKey: "OpenClawGitCommit") as? String) ??
-            (Bundle.main.object(forInfoDictionaryKey: "OpenClawGitCommit") as? String) ??
+        (Bundle.main.object(forInfoDictionaryKey: "PaddyGitCommit") as? String) ??
+            (Bundle.main.object(forInfoDictionaryKey: "PaddyGitCommit") as? String) ??
             "unknown"
     }
 

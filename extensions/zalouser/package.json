@@ -1,7 +1,7 @@
 {
-  "name": "@openclaw/zalouser",
+  "name": "@paddy/zalouser",
   "version": "2026.2.6-3",
-  "description": "OpenClaw Zalo Personal Account plugin via zca-cli",
+  "description": "Paddy Zalo Personal Account plugin via zca-cli",
   "type": "module",
   "dependencies": {
     "@sinclair/typebox": "0.34.48",
@@ -28,7 +28,7 @@
       "quickstartAllowFrom": true
     },
     "install": {
-      "npmSpec": "@openclaw/zalouser",
+      "npmSpec": "@paddy/zalouser",
       "localPath": "extensions/zalouser",
       "defaultChoice": "npm"
     }

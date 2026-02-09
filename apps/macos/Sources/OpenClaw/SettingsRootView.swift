@@ -24,7 +24,7 @@ struct SettingsRootView: View {
             }
             TabView(selection: self.$selectedTab) {
                 GeneralSettings(state: self.state)
-                    .tabItem { Label("General", systemImage: "gearshape") }
+                    .tabItem { Label("Hearth", systemImage: "house") }
                     .tag(SettingsTab.general)
 
                 ChannelsSettings()
@@ -36,7 +36,7 @@ struct SettingsRootView: View {
                     .tag(SettingsTab.voiceWake)
 
                 ConfigSettings()
-                    .tabItem { Label("Config", systemImage: "slider.horizontal.3") }
+                    .tabItem { Label("The Keep", systemImage: "lock.shield") }
                     .tag(SettingsTab.config)
 
                 InstancesSettings()
@@ -52,7 +52,7 @@ struct SettingsRootView: View {
                     .tag(SettingsTab.cron)
 
                 SkillsSettings(state: self.state)
-                    .tabItem { Label("Skills", systemImage: "sparkles") }
+                    .tabItem { Label("The Clan", systemImage: "person.3") }
                     .tag(SettingsTab.skills)
 
                 PermissionsSettings(
@@ -77,7 +77,7 @@ struct SettingsRootView: View {
         .padding(.vertical, 22)
         .frame(width: SettingsTab.windowWidth, height: SettingsTab.windowHeight, alignment: .topLeading)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .onReceive(NotificationCenter.default.publisher(for: .openclawSelectSettingsTab)) { note in
+        .onReceive(NotificationCenter.default.publisher(for: .paddySelectSettingsTab)) { note in
             if let tab = note.object as? SettingsTab {
                 withAnimation(.spring(response: 0.32, dampingFraction: 0.85)) {
                     self.selectedTab = tab
@@ -111,8 +111,8 @@ struct SettingsRootView: View {
 
     private var nixManagedBanner: some View {
         // Prefer gateway-resolved paths; fall back to local env defaults if disconnected.
-        let configPath = self.snapshotPaths.configPath ?? OpenClawPaths.configURL.path
-        let stateDir = self.snapshotPaths.stateDir ?? OpenClawPaths.stateDirURL.path
+        let configPath = self.snapshotPaths.configPath ?? PaddyPaths.configURL.path
+        let stateDir = self.snapshotPaths.stateDir ?? PaddyPaths.stateDirURL.path
 
         return VStack(alignment: .leading, spacing: 6) {
             HStack(spacing: 8) {
@@ -181,7 +181,7 @@ enum SettingsTab: CaseIterable {
     static let windowHeight: CGFloat = 790 // +10% (more room)
     var title: String {
         switch self {
-        case .general: "General"
+        case .general: "Hearth"
         case .channels: "Channels"
         case .skills: "Skills"
         case .sessions: "Sessions"
@@ -227,7 +227,7 @@ enum SettingsTabRouter {
 }
 
 extension Notification.Name {
-    static let openclawSelectSettingsTab = Notification.Name("openclawSelectSettingsTab")
+    static let paddySelectSettingsTab = Notification.Name("paddySelectSettingsTab")
 }
 
 #if DEBUG

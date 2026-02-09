@@ -1,7 +1,7 @@
 // Default service labels (canonical + legacy compatibility)
 export const GATEWAY_LAUNCH_AGENT_LABEL = "ai.openclaw.gateway";
 export const GATEWAY_SYSTEMD_SERVICE_NAME = "openclaw-gateway";
-export const GATEWAY_WINDOWS_TASK_NAME = "OpenClaw Gateway";
+export const GATEWAY_WINDOWS_TASK_NAME = "OpenClaw's Hearth";
 export const GATEWAY_SERVICE_MARKER = "openclaw";
 export const GATEWAY_SERVICE_KIND = "gateway";
 export const NODE_LAUNCH_AGENT_LABEL = "ai.openclaw.node";
@@ -53,7 +53,7 @@ export function resolveGatewayWindowsTaskName(profile?: string): string {
   if (!normalized) {
     return GATEWAY_WINDOWS_TASK_NAME;
   }
-  return `OpenClaw Gateway (${normalized})`;
+  return `OpenClaw's Hearth (${normalized})`;
 }
 
 export function formatGatewayServiceDescription(params?: {
@@ -70,9 +70,9 @@ export function formatGatewayServiceDescription(params?: {
     parts.push(`v${version}`);
   }
   if (parts.length === 0) {
-    return "OpenClaw Gateway";
+    return "OpenClaw's Hearth";
   }
-  return `OpenClaw Gateway (${parts.join(", ")})`;
+  return `OpenClaw's Hearth (${parts.join(", ")})`;
 }
 
 export function resolveNodeLaunchAgentLabel(): string {

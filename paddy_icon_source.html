@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        background: #0b0d0c;
+        overflow: hidden;
+      }
+      canvas {
+        display: block;
+        width: 1024px;
+        height: 1024px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="paddyCanvas" width="1024" height="1024"></canvas>
+    <script>
+      const canvas = document.getElementById("paddyCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // Draw Leprechaun Hat Silhouette / Shamrock Hybrid Icon
+      ctx.fillStyle = "#2e7d32"; // Emerald
+
+      // Background rounded rect
+      ctx.beginPath();
+      ctx.roundRect(0, 0, 1024, 1024, 220);
+      ctx.fill();
+
+      // High contrast gold shamrock in center
+      ctx.fillStyle = "#ffd700"; // Gold
+      ctx.translate(512, 512);
+
+      // Stem
+      ctx.rotate((180 * Math.PI) / 180);
+      ctx.fillRect(-25, 0, 50, 400);
+      ctx.rotate((-180 * Math.PI) / 180);
+
+      // 3 Leaves
+      for (let i = 0; i < 3; i++) {
+        ctx.save();
+        ctx.rotate((i * 120 * Math.PI) / 180);
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.bezierCurveTo(-300, -50, -300, -450, 0, -450);
+        ctx.bezierCurveTo(300, -450, 300, -50, 0, 0);
+        ctx.fill();
+        ctx.restore();
+      }
+    </script>
+  </body>
+</html>

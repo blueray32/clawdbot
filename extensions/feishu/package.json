@@ -1,7 +1,7 @@
 {
-  "name": "@openclaw/feishu",
+  "name": "@paddy/feishu",
   "version": "2026.2.6-3",
-  "description": "OpenClaw Feishu/Lark channel plugin (community maintained by @m1heng)",
+  "description": "Paddy Feishu/Lark channel plugin (community maintained by @m1heng)",
   "type": "module",
   "dependencies": {
     "@larksuiteoapi/node-sdk": "^1.58.0",
@@ -29,7 +29,7 @@
       "quickstartAllowFrom": true
     },
     "install": {
-      "npmSpec": "@openclaw/feishu",
+      "npmSpec": "@paddy/feishu",
       "localPath": "extensions/feishu",
       "defaultChoice": "npm"
     }

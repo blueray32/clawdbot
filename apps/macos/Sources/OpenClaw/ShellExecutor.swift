@@ -1,4 +1,4 @@
-import OpenClawIPC
+import PaddyIPC
 import Foundation
 
 enum ShellExecutor {

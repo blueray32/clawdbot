@@ -1,4 +1,4 @@
-import OpenClawKit
+import PaddyKit
 import Foundation
 
 enum ChatPayloadDecoding {

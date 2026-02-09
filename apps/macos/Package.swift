@@ -59,7 +59,7 @@ let package = Package(
                 "Resources/Info.plist",
             ],
             resources: [
-                .copy("Resources/OpenClaw.icns"),
+                .copy("Resources/Paddy.icns"),
                 .copy("Resources/DeviceModels"),
             ],
             swiftSettings: [

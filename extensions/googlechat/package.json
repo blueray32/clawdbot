@@ -1,7 +1,7 @@
 {
-  "name": "@openclaw/googlechat",
+  "name": "@paddy/googlechat",
   "version": "2026.2.6-3",
-  "description": "OpenClaw Google Chat channel plugin",
+  "description": "Paddy Google Chat channel plugin",
   "type": "module",
   "dependencies": {
     "google-auth-library": "^10.5.0"
@@ -31,7 +31,7 @@
       "order": 55
     },
     "install": {
-      "npmSpec": "@openclaw/googlechat",
+      "npmSpec": "@paddy/googlechat",
       "localPath": "extensions/googlechat",
       "defaultChoice": "npm"
     }
