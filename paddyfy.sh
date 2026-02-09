@@ -9,14 +9,14 @@ if [ -f ui/index.html ]; then
   sed -i '' 's/<title>OpenClaw Control<\/title>/<title>Paddy Control<\/title>/g' ui/index.html
 fi
 
-# 1.1 Update App Icon to Shamrock
-if [ -d ui/public ]; then
-cat <<EOF > ui/public/favicon.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <path fill="#2e7d32" d="M50 50 L50 90 M50 50 Q30 50 30 30 Q30 10 50 10 Q70 10 70 30 Q70 50 50 50 M50 50 Q50 30 70 30 Q90 30 90 50 Q90 70 70 70 Q50 70 50 50 M50 50 Q50 70 30 70 Q10 70 10 50 Q10 30 30 30 Q50 30 50 50" />
-</svg>
-EOF
-fi
+# 1.1 Update App Icon to Shamrock (SKIPPED - USING LEPRECHAUN)
+# if [ -d ui/public ]; then
+# cat <<EOF > ui/public/favicon.svg
+# <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+#   <path fill="#2e7d32" d="M50 50 L50 90 M50 50 Q30 50 30 30 Q30 10 50 10 Q70 10 70 30 Q70 50 50 50 M50 50 Q50 30 70 30 Q90 30 90 50 Q90 70 70 70 Q50 70 50 50 M50 50 Q50 70 30 70 Q10 70 10 50 Q10 30 30 30 Q50 30 50 50" />
+# </svg>
+# EOF
+# fi
 
 # 2. Update UI Dashboard Header and Labels
 if [ -f ui/src/ui/app-render.ts ]; then

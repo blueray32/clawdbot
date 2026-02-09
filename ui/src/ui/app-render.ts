@@ -134,11 +134,11 @@ export function renderApp(state: AppViewState) {
           </button>
           <div class="brand">
             <div class="brand-logo">
-              <img src=${basePath ? `${basePath}/favicon.svg` : "/favicon.svg"} alt="Paddy" />
+              <img src=${basePath ? `${basePath}/apple-touch-icon.png` : "/apple-touch-icon.png"} alt="Paddy" />
             </div>
             <div class="brand-text">
               <div class="brand-title">PADDY</div>
-              <div class="brand-sub">OpenClaw's Hearth</div>
+              <div class="brand-sub">Paddy's Hearth</div>
             </div>
           </div>
         </div>
