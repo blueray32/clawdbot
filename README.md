@@ -2,7 +2,7 @@
 
 <p align="center">
     <picture>
-        <img src="paddy_green.png" alt="Paddy" width="200">
+        <img src="paddy_logo.png" alt="Paddy" width="200">
     </picture>
 </p>
 
