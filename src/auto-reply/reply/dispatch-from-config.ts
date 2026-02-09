@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import type { OpenClawConfig } from "../../config/config.js";
 import type { FinalizedMsgContext } from "../templating.js";
 import type { GetReplyOptions, ReplyPayload } from "../types.js";
@@ -247,6 +248,25 @@ export async function dispatchReplyFromConfig(params: {
   };
 
   markProcessing();
+
+  emitAgentEvent({
+    runId: params.opts?.runId ?? crypto.randomUUID(),
+    stream: "user_prompt",
+    data: {
+      content:
+        typeof ctx.BodyForCommands === "string"
+          ? ctx.BodyForCommands
+          : typeof ctx.RawBody === "string"
+            ? ctx.RawBody
+            : typeof ctx.Body === "string"
+              ? ctx.Body
+              : "",
+      channel,
+      chatId,
+      messageId,
+      timestamp: ctx.Timestamp,
+    },
+  });
 
   try {
     const fastAbort = await tryFastAbortFromMessage({ ctx, cfg });

@@ -485,6 +485,19 @@ export async function runEmbeddedAttempt(
         sessionManager,
         settingsManager,
       }));
+
+      emitAgentEvent({
+        runId: params.runId,
+        stream: "lifecycle",
+        data: {
+          phase: "session_start",
+          sessionId: session?.sessionId,
+          agentId: sessionAgentId,
+          model: `${params.provider}/${params.modelId}`,
+          workspace: redactedWorkspace,
+        },
+      });
+
       applySystemPromptOverrideToSession(session, systemPromptText);
       if (!session) {
         throw new Error("Embedded agent session missing");
@@ -867,6 +880,17 @@ export async function runEmbeddedAttempt(
               log.warn(`agent_end hook failed: ${err}`);
             });
         }
+
+        emitAgentEvent({
+          runId: params.runId,
+          stream: "lifecycle",
+          data: {
+            phase: "session_end",
+            success: !aborted && !promptError,
+            error: promptError ? describeUnknownError(promptError) : undefined,
+            durationMs: Date.now() - promptStartedAt,
+          },
+        });
       } finally {
         clearTimeout(abortTimer);
         if (abortWarnTimer) {

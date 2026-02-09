@@ -250,6 +250,15 @@ function finalizeSubagentCleanup(runId: string, cleanup: "delete" | "keep", didA
   if (cleanup === "delete") {
     subagentRuns.delete(runId);
     persistSubagentRuns();
+    emitAgentEvent({
+      runId,
+      stream: "lifecycle",
+      data: {
+        phase: "subagent_stop",
+        cleanup: "delete",
+        didAnnounce,
+      },
+    });
     return;
   }
   if (!didAnnounce) {
@@ -260,6 +269,16 @@ function finalizeSubagentCleanup(runId: string, cleanup: "delete" | "keep", didA
   }
   entry.cleanupCompletedAt = Date.now();
   persistSubagentRuns();
+
+  emitAgentEvent({
+    runId,
+    stream: "lifecycle",
+    data: {
+      phase: "subagent_stop",
+      cleanup: "keep",
+      didAnnounce,
+    },
+  });
 }
 
 function beginSubagentCleanup(runId: string) {
@@ -309,6 +328,19 @@ export function registerSubagentRun(params: {
     archiveAtMs,
     cleanupHandled: false,
   });
+
+  emitAgentEvent({
+    runId: params.runId,
+    stream: "lifecycle",
+    data: {
+      phase: "subagent_start",
+      childSessionKey: params.childSessionKey,
+      requesterSessionKey: params.requesterSessionKey,
+      task: params.task,
+      label: params.label,
+    },
+  });
+
   ensureListener();
   persistSubagentRuns();
   if (archiveAfterMs) {
